@@ -45,6 +45,13 @@ from .utils import (
     unregister_custom_op_symbolic,
 )
 
+from ._internal.exporter import (  # usort:skip. needs to be last to avoid circular import
+    ExportOptions,
+    ExportOutput,
+    ExportOutputSerializer,
+    dynamo_export,
+)
+
 __all__ = [
     # Modules
     "symbolic_helper",
@@ -81,6 +88,11 @@ __all__ = [
     "enable_log",
     # Errors
     "CheckerError",  # Backwards compatibility
+    # Dynamo Exporter
+    "ExportOptions",
+    "ExportOutput",
+    "ExportOutputSerializer",
+    "dynamo_export",
 ]
 
 # Set namespace for exposed private names
