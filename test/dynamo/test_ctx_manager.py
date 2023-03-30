@@ -15,6 +15,7 @@ from torch.testing._internal.common_cuda import (
     SM80OrLater,
 )
 
+
 class CtxManagerTests(torch._dynamo.test_case.TestCase):
     def test_no_grad(self):
         def fn1(a, b):
@@ -97,7 +98,7 @@ class CtxManagerTests(torch._dynamo.test_case.TestCase):
         for _ in range(10):
             opt_fn(a)
         self.assertEqual(cnts.frame_count, 3)
-    
+
     def test_torch_profiler(self):
         # wrap torch.profiler.* as NullContextVariable and do nothing
         def fn(x):
@@ -137,7 +138,7 @@ class CtxManagerTests(torch._dynamo.test_case.TestCase):
         res = opt_fn(x)
         self.assertTrue(same(ref, res))
         self.assertEqual(cnts.frame_count, 2)
-    
+
     @unittest.skipIf(not torch.cuda.is_available(), "requires cuda")
     def test_cuda_stream_context_manager1(self):
         def fn(x):
@@ -203,7 +204,7 @@ class CtxManagerTests(torch._dynamo.test_case.TestCase):
             ref = fn(x)
             res = opt_fn(x)
             self.assertTrue(same(ref, res))
-    
+
     @unittest.skipIf(not torch.cuda.is_available(), "requires cuda")
     def test_autocast(self):
         if not torch.cuda.is_bf16_supported():
