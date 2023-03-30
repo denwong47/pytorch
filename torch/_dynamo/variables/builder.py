@@ -60,7 +60,7 @@ from ..utils import (
 from .base import MutableLocal, typestr, VariableTracker
 from .builtin import BuiltinVariable
 from .constant import ConstantVariable, EnumVariable
-from .context import CUDAStreamVariable
+from .ctx_manager import CUDAStreamVariable
 from .dicts import (
     ConstDictVariable,
     DataClassVariable,

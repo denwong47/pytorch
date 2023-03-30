@@ -15,7 +15,7 @@ from torch.testing._internal.common_cuda import (
     SM80OrLater,
 )
 
-class ContextTests(torch._dynamo.test_case.TestCase):
+class CtxManagerTests(torch._dynamo.test_case.TestCase):
     def test_no_grad(self):
         def fn1(a, b):
             x = a + 1

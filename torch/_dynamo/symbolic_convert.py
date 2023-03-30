@@ -59,7 +59,7 @@ from .variables.base import MutableLocal, typestr, VariableTracker
 from .variables.builder import VariableBuilder, wrap_fx_proxy
 from .variables.builtin import BuiltinVariable
 from .variables.constant import ConstantVariable, EnumVariable
-from .variables.context import ContextWrappingVariable, WithExitFunctionVariable
+from .variables.ctx_manager import ContextWrappingVariable, WithExitFunctionVariable
 from .variables.dicts import ConstDictVariable
 from .variables.functions import (
     BaseUserFunctionVariable,

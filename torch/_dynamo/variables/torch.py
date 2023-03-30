@@ -29,7 +29,7 @@ from ..utils import (
     tensortype_to_dtype,
 )
 from .base import VariableTracker
-from .context import AutocastModeVariable, NullContextVariable
+from .ctx_manager import AutocastModeVariable, NullContextVariable
 from .lists import ListVariable, TupleVariable
 from .tensor import TensorWithTFOverrideVariable
 

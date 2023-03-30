@@ -1,7 +1,7 @@
 from .base import VariableTracker
 from .builtin import BuiltinVariable
 from .constant import ConstantVariable, EnumVariable
-from .context import (
+from .ctx_manager import (
     ContextWrappingVariable,
     CUDAStreamContextVariable,
     CUDAStreamVariable,
