@@ -1,0 +1,28 @@
+name: experimental-thing
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - main
+      - release/*
+      - landchecks/*
+
+jobs:
+  test:
+    name: the-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
+
+      - name: List all changed files
+        run: |
+          echo "<<<<<<<< start >>>>>>>>>"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+          echo "<<<<<<<< end >>>>>>>>>"
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
